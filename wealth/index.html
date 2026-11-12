@@ -528,7 +528,7 @@
     <span class="u"><i class="mk"></i></span>
     <span>urban money <em>wealth</em></span>
   </a>
-  <div class="hdr-r"><a class="backum" href="../">&larr; <span class="long">Urban Money brand book</span><span class="short">UM book</span></a>
+  <div class="hdr-r"><a class="backum" href="../index.html">&larr; <span class="long">Urban Money brand book</span><span class="short">UM book</span></a>
   <button class="burger" id="burger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button></div>
 </header>
 
@@ -541,7 +541,7 @@
     <li><a href="#visual-language"><em>05</em>Visual Language</a></li>
     <li><a href="#applications"><em>06</em>Applications</a></li>
     <li><a href="#elements"><em>07</em>Elements</a></li>
-    <li><a href="../"><em>UM</em>Urban Money brand book</a></li>
+    <li><a href="../index.html"><em>UM</em>Urban Money brand book</a></li>
   </ol>
   <p class="navfoot">Urban Money Wealth · Brand Book 2026</p>
 </nav>
@@ -1263,6 +1263,7 @@
       }
       return;
     }
+    if(window.self!==window.top){toast('Downloads work on the live site: urban-money-brandbook.vercel.app/wealth/');return;}
     const url=URL.createObjectURL(blob),a=document.createElement('a');
     a.href=url;a.download=filename;document.body.appendChild(a);a.click();a.remove();
     setTimeout(()=>URL.revokeObjectURL(url),5000);
