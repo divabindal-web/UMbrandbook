@@ -449,6 +449,7 @@
   .gc-front{background:#F7F6F1;color:#111}
   .gc-back{background:#1A1A1A;display:grid;place-items:center}
   .gc-back img{width:63.6%}
+  .gc-arn{position:absolute;left:0;right:0;bottom:6cqw;text-align:center;font-family:var(--sans);font-weight:500;font-size:2.4cqw;line-height:1.3;color:#C8C7C3;white-space:nowrap}
   .gc-arrow{position:absolute;right:-3cqw;bottom:-6cqw;width:34cqw;max-width:none}
   .gc-logo{position:absolute;right:6cqw;top:6.5cqw;width:27cqw}
   .gc-who{position:absolute;left:6cqw;top:7cqw;display:flex;flex-direction:column;align-items:flex-start}
@@ -1162,8 +1163,8 @@
           <div class="gc-addr"><span class="ce" data-f="addr1" data-max="60" data-base="2.6"></span><span class="ce" data-f="addr2" data-max="60" data-base="2.6"></span></div>
         </div>
         <div class="gen-row">
-          <div class="gc gc-back" role="img" aria-label="Card back: Urban Money and Square Yards logos"><img src="assets/card/card-cobrand.png" alt=""></div>
-          <p class="gen-note"><b>Front</b> uses your details. <b>Back</b> is fixed: the Urban Money and Square Yards lockup on Onyx. Long names shrink to fit beside the logo.</p>
+          <div class="gc gc-back" role="img" aria-label="Card back: Urban Money and Square Yards logos, AMFI Registered Mutual Fund Distributor: ARN-147985"><img src="assets/card/card-cobrand.png" alt=""><span class="gc-arn">AMFI Registered Mutual Fund Distributor: ARN-147985</span></div>
+          <p class="gen-note"><b>Front</b> uses your details. <b>Back</b> is fixed: the Urban Money and Square Yards lockup on Onyx, with the AMFI ARN line. Long names shrink to fit beside the logo.</p>
         </div>
       </div>
     </div>
@@ -1358,6 +1359,7 @@
     doc.setFillColor(26,26,26);doc.rect(0,0,PW,PH,'F');
     const bw=TW*.636, bh=bw*399/2007;
     doc.addImage(kit.cob,'PNG',X+(TW-bw)/2,Y+(TH-bh)/2,bw,bh,'cobrand','FAST');
+    {const s=2.4*MM;doc.setFont('PlexSans','medium');doc.setFontSize(s*PT);doc.setTextColor(200,199,195);doc.text('AMFI Registered Mutual Fund Distributor: ARN-147985',X+TW/2,baseline(Y+TH-6*MM-1.3*s,s,1.3,MET.pm),{align:'center'});}
     return doc.output('blob');
   }
   const slug=s=>(s||'').toLowerCase().normalize('NFKD').replace(/[^\w\s-]/g,'').trim().replace(/[\s_]+/g,'-').replace(/-+/g,'-').slice(0,40);
